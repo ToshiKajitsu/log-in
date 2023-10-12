@@ -1,0 +1,161 @@
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    .sceletonLogo {
+        width: 60%;
+        img {
+            width: 100%;
+            border-radius: 5px;
+        // height: 100vh;
+
+        }
+    }
+    .registrationContainer {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        margin-top: 50px;
+        .loginContainer {
+            margin-top: 36px;
+            h1 {
+                font-weight: 700;
+                font-size: 36px;
+                line-height: 49px;
+                margin-bottom: 3px;
+                color: #525252;
+            };
+            .loginContainer > p {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 22px;
+                color: #525252;
+            }
+            .btn {
+                margin: 32px 0 36px 0;
+                width: 100%;
+                padding: 10px 0 10px 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid #E8E8E8;
+                border-radius: 5px;
+                background-color: #fff;
+                img {
+                    margin-right: 13px;
+                }
+                span {
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 19px;
+                    color: #828282;
+                }
+            }
+            .altSign {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                font-weight: 600;
+                font-size: 12px;
+                line-height: 16px;
+                color: #A1A1A1;
+                p > span {
+                    color: #DDDDDD
+                }
+            }
+            .formAuth {
+                margin-top: 36px;
+                .formEmail {
+                    display: flex;
+                    flex-direction: column;
+                    label {
+                        margin-bottom: 4px;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 19px;
+                        color: #828282;
+                    }
+                    input {
+                        width: 100%;
+                        padding: 13px 10px;
+                        border: 1px solid #DED2D9;
+                        border-radius: 5px;
+                    };
+                    input::-webkit-input-placeholder {
+                        color: #E0E0E0; 
+                    };
+                };
+                .formPassword {
+                    margin-top: 24px;
+                    display: flex;
+                    flex-direction: column;
+                    label {
+                        margin-bottom: 4px;
+                        font-weight: 600;
+                        font-size: 14px;
+                        line-height: 19px;
+                        color: #828282;
+                    }
+                    input {
+                        width: 100%;
+                        padding: 13px 10px;
+                        border: 1px solid #DED2D9;
+                        border-radius: 5px;
+                    }
+                    input::-webkit-input-placeholder {
+                        color: #E0E0E0; 
+                    };
+                }
+                .checkPassword {
+                    margin-top: 8px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 16px;
+                    color: #A1A1A1;
+                    .checkPassword_savePassword {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        >input {
+                            background-color: #7F265B;
+                        }
+                        >p {
+                            margin-left: 8px;
+                        }
+                    }
+                }
+                .form_auth_button {
+                    margin-top: 32px;
+                    width: 100%;
+                    padding: 12px 0;
+                    background-color: #7F265B;
+                    font-weight: 800;
+                    font-size: 18px;
+                    line-height: 25px;
+                    color: #fff;
+                    border-radius: 6px;
+                    margin-bottom: 75px;
+                    &:hover {
+                        background-color: #7f265bce
+                    }
+                }
+            }
+        }
+    }
+};
+
+.creatAcc {
+    margin-bottom: 50px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: #828282;
+    display: flex;
+    justify-content: center;
+}

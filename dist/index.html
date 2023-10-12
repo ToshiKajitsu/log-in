@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Header -->
+    
+    <!-- Main Page -->
+    <main>
+        <div class="sceletonLogo">
+            <img src="./img/illustration.png" alt="Picture">
+        </div>
+        <div class="registrationContainer container">
+            <div class="mainForm">
+                <img src="./img/Group 1686550876.png" alt="">
+                <div class="loginContainer">
+                    <h1>Login to your Account</h1>
+                    <p>See what is going on with your business</p>
+                    <button class="btn"><img src="./img/image 2.png" alt="iconGoogle"><span>Continue with Google</span></button>
+                    <div class="altSign">
+                        <p><span class="bpMobile">-------------</span> or Sign in with Email <span class="bpMobile">-------------</span></p>
+                    </div>
+                    <form class="formAuth" action="#" method="post">
+                        <div class="formEmail">
+                            <label>Email</label>
+                            <input class="emailInput" type="email" name="auth_email" placeholder="mail@abc.com" required >   
+                        </div>
+                        <div class="formPassword">
+                            <label>Password</label>
+                            <input class="passwordInput" type="password" name="auth_pass" placeholder="*****************" required >  
+                        </div>
+                        <div class="checkPassword">
+                            <div class="checkPassword_savePassword"><input type="checkbox" name="" id=""><span></span><p>Remember me</p></div>
+                            <div><a href=""><span>Forgot Password?</span></a></div>
+                        </div>
+                        <button class="form_auth_button" type="submit" name="form_auth_submit">Login</button>
+                    </form>
+                </div>
+                <div class="creatAcc"><p>Not Registered Yet? <a href="#">Create an account</a></p></div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    
+    <script src="js/script.min.js"></script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAp8vExMssHrpNAM6ezEDTTNoG5DmGli-o",
+            authDomain: "registrationformtest-3c9d4.firebaseapp.com",
+            projectId: "registrationformtest-3c9d4",
+            storageBucket: "registrationformtest-3c9d4.appspot.com",
+            messagingSenderId: "620994150423",
+            appId: "1:620994150423:web:3c776b79bff909fee09c52"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider(app);
+        const btn = document.querySelector('.btn');
+
+        btn.addEventListener('click', (e) => {
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    // This gives you a Google Access Token. You can use it to access the Google API.
+                    const credential = GoogleAuthProvider.credentialFromResult(result);
+                    const token = credential.accessToken;
+                    // The signed-in user info.
+                    const user = result.user;
+                    alert(user.displayName);
+                    // ...
+                }).catch((error) => {
+                    // Handle Errors here.
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // The email of the user's account used.
+                    const email = error.customData.email;
+                    // The AuthCredential type that was used.
+                    const credential = GoogleAuthProvider.credentialFromError(error);
+                    alert(errorMessage);
+                    // ...
+                });
+        });
+    </script>
+</body>
+</html>
